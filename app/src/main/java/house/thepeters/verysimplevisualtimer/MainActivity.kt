@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             isCancelled = true
             btnCancel!!.isVisible = false
             btnStart!!.isVisible = true
-            progressBar!!.progress = max
+            progressBar!!.progress = 0
             etSeconds!!.isEnabled = true
             etMinutes!!.isEnabled = true
         }
