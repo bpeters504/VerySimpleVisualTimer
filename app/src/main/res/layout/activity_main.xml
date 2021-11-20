@@ -54,7 +54,6 @@
 
     <EditText
         android:id="@+id/etMinutes"
-        android:textColor="@color/blue_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="5"
@@ -70,7 +69,6 @@
 
     <EditText
         android:id="@+id/etSeconds"
-        android:textColor="@color/blue_dark"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="5"
