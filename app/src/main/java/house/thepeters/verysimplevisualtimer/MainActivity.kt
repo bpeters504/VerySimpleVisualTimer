@@ -105,14 +105,10 @@ class MainActivity : AppCompatActivity() {
                 etMinutes!!.isEnabled = true
                 etSeconds!!.isEnabled = true
 
-                try {
-                    val notification: Uri =
-                        RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
-                    val r = RingtoneManager.getRingtone(applicationContext, notification)
-                    r.play()
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
+                val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                val r = RingtoneManager.getRingtone(applicationContext, defaultSoundUri)
+                r.play()
+
                 window.addFlags(WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON)
 
             }
