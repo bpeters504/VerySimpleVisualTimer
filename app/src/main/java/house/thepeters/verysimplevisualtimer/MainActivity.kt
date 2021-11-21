@@ -9,11 +9,7 @@ import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import android.content.Intent
 import androidx.core.view.isVisible
 import android.media.RingtoneManager
-
-import android.media.Ringtone
-import android.net.Uri
 import android.view.WindowManager
-import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
