@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
     private var prog = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -39,6 +38,8 @@ class MainActivity : AppCompatActivity() {
             var minutes = 0
             var seconds = 0
             isCancelled = false
+            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
 
             if (etMinutes?.text.toString() != ""){
                 minutes = etMinutes?.text.toString().toInt()
@@ -64,6 +65,8 @@ class MainActivity : AppCompatActivity() {
             progressBar!!.progress = 0
             etSeconds!!.isEnabled = true
             etMinutes!!.isEnabled = true
+            window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+
         }
 
     }
@@ -99,12 +102,11 @@ class MainActivity : AppCompatActivity() {
                 btnStart!!.isVisible = true
                 etMinutes!!.isEnabled = true
                 etSeconds!!.isEnabled = true
+                window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
 
                 val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
                 val r = RingtoneManager.getRingtone(applicationContext, defaultSoundUri)
                 r.play()
-
-                window.addFlags(WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON)
 
             }
         }.start()
