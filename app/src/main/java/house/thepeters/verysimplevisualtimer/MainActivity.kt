@@ -8,6 +8,11 @@ import android.widget.*
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 import android.content.Intent
 import androidx.core.view.isVisible
+import android.media.RingtoneManager
+
+import android.media.Ringtone
+import android.net.Uri
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
@@ -96,6 +101,16 @@ class MainActivity : AppCompatActivity() {
                 btnStart!!.isVisible = true
                 etMinutes!!.isEnabled = true
                 etSeconds!!.isEnabled = true
+
+                try {
+                    val notification: Uri =
+                        RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
+                    val r = RingtoneManager.getRingtone(applicationContext, notification)
+                    r.play()
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+
             }
         }.start()
     }
