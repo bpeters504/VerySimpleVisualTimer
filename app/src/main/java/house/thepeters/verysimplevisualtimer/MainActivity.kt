@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     private var prog = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -53,7 +54,6 @@ class MainActivity : AppCompatActivity() {
             etMinutes!!.isEnabled = false
             etSeconds!!.isEnabled = false
             btnCancel!!.isVisible = true
-            window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
             startTimer(maxMilli)
 
         }
@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
             progressBar!!.progress = 0
             etSeconds!!.isEnabled = true
             etMinutes!!.isEnabled = true
-            window.addFlags(WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON)
         }
 
     }
