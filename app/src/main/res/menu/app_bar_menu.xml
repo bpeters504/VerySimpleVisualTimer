@@ -7,4 +7,9 @@
         android:title="Licenses"
         android:icon="@drawable/ic_action_licenses"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/miPrivacyPolicy"
+        android:title="Privacy Policy"
+        android:icon="@drawable/ic_action_privacy"
+        app:showAsAction="never"/>
 </menu>

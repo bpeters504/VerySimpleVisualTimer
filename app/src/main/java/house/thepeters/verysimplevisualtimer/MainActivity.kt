@@ -12,6 +12,7 @@ import android.media.RingtoneManager
 import android.view.WindowManager
 
 
+
 class MainActivity : AppCompatActivity() {
 
     private var progressBar: ProgressBar? = null
@@ -77,11 +78,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
+        when (item.itemId) {
             R.id.miLicenses -> startActivity(Intent(this, OssLicensesMenuActivity::class.java))
+            R.id.miPrivacyPolicy -> startActivity(Intent(this,PrivacyPolicyActivity::class.java))
         }
         return true
     }
+
     private fun startTimer(tProg: Long){
         object : CountDownTimer(tProg, 10) {
 
